@@ -6,8 +6,10 @@ First, we have a function that reads a .xyz file and returns a list of atoms and
 The next block is the most important one. I, generates the inertia tensor by taking as arguments the translated geometry and the masses. The Kronecker delta is programmed as a two-case if block to differentiate the diagonal and offdiagonal elements. diag takes the inertia tensor and returns several variables:
 
 • diag(I(...))[0] = D = diagonal matrix with the eigenvalues sorted.
+
 • diag(I(...))[1] = R = rotation matrix made of normalized eigenvectors
 in columns.
+
 • diag(I(...))[2/3/4] = Ia/Ib/Ic = principal moments of inertia.
 
 
@@ -19,8 +21,11 @@ Lastly, inertia, groups all the previous functions and adds the rotated molecule
 The program was tested with four molecules:
 
 • Methane (CH4): spherical top
+
 • Chloroform (CH3Cl): prolate symmetrical top
+
 • Benzene (C6H6): oblate symmetrical top
+
 • Water (H2O): asymmetrical top
 
 In the case of CH4, the output is the following:
