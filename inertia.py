@@ -109,7 +109,7 @@ def inertia(molecule): # The argument is the xyz file
 
 # Options: coordinates, atoms, atom_mass, mass_center, new_coordinates, tensor, diagonal,
 #          I_i (i can be A, B or C), rotation and rotated_molecule
-
-molecule = input('Choose a .xyz file: \n')
-inertia(molecule)
+if __name__ == '__main__':
+    molecule = input('Choose a .xyz file: \n')
+    inertia(molecule)
 
